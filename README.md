@@ -1,2 +1,3 @@
-# BlinkPOMDPSimulator.jl
-POMDPs.jl Simulator that displays a visualization via Blink.jl
+# Blink POMDP Simulator
+
+This is a work in progress!
