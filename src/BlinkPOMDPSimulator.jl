@@ -1,4 +1,4 @@
-module BlinkSimulator
+module BlinkPOMDPSimulator
 
 using POMDPs
 using POMDPSimulators
