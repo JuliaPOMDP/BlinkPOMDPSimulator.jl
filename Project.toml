@@ -1,6 +1,7 @@
-authors = ["Zachary Sunberg <sunbergzach@gmail.com>"]
 name = "BlinkSimulator"
 uuid = "3e810eaa-b867-11e8-06c7-efa977e0db48"
+authors = ["Zachary Sunberg <sunbergzach@gmail.com>"]
 version = "0.1.0"
 
 [deps]
+POMDPs = "a93abf59-7444-517b-a68a-c42f96afdd7d"
