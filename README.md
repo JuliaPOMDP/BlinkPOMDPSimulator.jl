@@ -1,5 +1,7 @@
 # Blink POMDP Simulator
 
+[![Build Status](https://travis-ci.org/JuliaPOMDP/BlinkPOMDPSimulator.jl.svg?branch=master)](https://travis-ci.org/JuliaPOMDP/BlinkPOMDPSimulator.jl)
+
 A simulator for visualizing problems in real time.
 
 # Installation
