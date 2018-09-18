@@ -9,7 +9,7 @@ using Blink
 using Random
 using Base64: stringmime
 
-using Compose     # only for special blink!
+# using Compose     # only for special blink!
 
 export BlinkSimulator
 
@@ -106,12 +106,12 @@ sleep_until(t) = sleep(max(t-time(), 0.0))
 
 # hack to av
 blink!(win::Window, rendering) = body!(win, rendering, fade=false)
-function blink!(win::W, rendering::Compose.Context) where W <: WindowLike
-    x, y = size(win)
-    sz = min(x,y)
-    s = SVG(0.98*sz*px, 0.98*sz*px)
-    draw(s, rendering)
-    blink!(win, s)
-end
+# function blink!(win::W, rendering::Compose.Context) where W <: WindowLike
+#     x, y = size(win)
+#     sz = min(x,y)
+#     s = SVG(0.98*sz*px, 0.98*sz*px)
+#     draw(s, rendering)
+#     blink!(win, s)
+# end
 
 end # module
