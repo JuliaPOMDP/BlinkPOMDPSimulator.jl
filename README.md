@@ -23,10 +23,11 @@ using POMDPs
 using BlinkPOMDPSimulator
 using POMDPModels
 using POMDPPolicies
+using Compose
 
 bs = BlinkSimulator()
 
-mdp = LegacyGridWorld()
+mdp = SimpleGridWorld()
 p = FunctionPolicy(s->:up)
 
 simulate(bs, mdp, p)
