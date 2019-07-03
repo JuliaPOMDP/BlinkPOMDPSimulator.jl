@@ -7,8 +7,6 @@ using POMDPPolicies
 using Parameters
 using Blink
 using Random
-using Base64: stringmime
-using Requires
 
 export BlinkSimulator
 
@@ -104,11 +102,5 @@ end
 sleep_until(t) = sleep(max(t-time(), 0.0))
 
 blink!(win::Window, rendering) = body!(win, rendering, fade=false)
-
-# interaction with Compose.jl via Requires
-function __init__()
-    @require Compose="a81c6b42-2e10-5240-aca2-a61377ecd94b" include("compose_glue.jl")
-end
-
 
 end # module
