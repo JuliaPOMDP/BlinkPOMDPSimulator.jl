@@ -4,6 +4,8 @@
 
 A simulator for visualizing [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) problems in real time.
 
+The display simulator from [POMDPSimulators.jl](https://github.com/JuliaPOMDP/POMDPSimulators.jl) is a more modern alternative.
+
 # Installation
 
 Use the JuliaPOMDP registry:
