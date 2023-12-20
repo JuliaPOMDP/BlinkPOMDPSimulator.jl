@@ -11,7 +11,7 @@ The display simulator from [POMDPTools](https://juliapomdp.github.io/POMDPs.jl/s
 
 ```julia
 using Pkg
-Pkg.add("BlinkPOMDPSimulator")
+Pkg.add(url="https://github.com/JuliaPOMDP/BlinkPOMDPSimulator.jl.git")
 ```
 
 # Usage
