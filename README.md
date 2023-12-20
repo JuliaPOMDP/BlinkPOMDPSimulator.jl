@@ -1,20 +1,16 @@
 # Blink POMDP Simulator
 
-[![Build Status](https://travis-ci.org/JuliaPOMDP/BlinkPOMDPSimulator.jl.svg?branch=master)](https://travis-ci.org/JuliaPOMDP/BlinkPOMDPSimulator.jl)
+[![CI](https://github.com/JuliaPOMDP/BlinkPOMDPSimulator.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/BlinkPOMDPSimulator.jl/actions/workflows/ci.yml)
+[![codecov.io](http://codecov.io/github/JuliaPOMDP/BlinkPOMDPSimulator.jl/coverage.svg?branch=master)](http://codecov.io/github/JuliaPOMDP/BlinkPOMDPSimulator.jl?branch=master)
 
 A simulator for visualizing [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) problems in real time.
 
-The display simulator from [POMDPSimulators.jl](https://github.com/JuliaPOMDP/POMDPSimulators.jl) is a more modern alternative.
+The display simulator from [POMDPTools](https://juliapomdp.github.io/POMDPs.jl/stable/POMDPTools/simulators/) is an alternative.
 
 # Installation
 
-Use the JuliaPOMDP registry:
-
 ```julia
-import Pkg
-Pkg.add("POMDPs")
-import POMDPs
-POMDPs.add_registry()
+using Pkg
 Pkg.add("BlinkPOMDPSimulator")
 ```
 
@@ -23,8 +19,7 @@ Pkg.add("BlinkPOMDPSimulator")
 ```julia
 using POMDPs
 using BlinkPOMDPSimulator
-using POMDPModels
-using POMDPPolicies
+using POMDPModels # for SimpleGridWorld
 using Compose
 
 bs = BlinkSimulator()
