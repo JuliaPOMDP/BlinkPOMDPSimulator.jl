@@ -1,9 +1,7 @@
 module BlinkPOMDPSimulator
 
 using POMDPs
-using POMDPModelTools
-using POMDPSimulators
-using POMDPPolicies
+using POMDPTools
 using Parameters
 using Blink
 using Random
@@ -29,14 +27,14 @@ end
 function POMDPs.simulate(sim::BlinkSimulator,
                          m::MDP,
                          p::Policy=RandomPolicy(m, rng=sim.rng),
-                         is=initialstate(m, sim.rng)
+                         s0=rand(sim.rng, initialstate(m))
                         )
 
     dt = 1/sim.max_fps
     tm = time()
 
     if sim.extra_initial
-        step = (t=0, sp=is)
+        step = (t=0, sp=s0)
         gfx = render(m, step; sim.render_kwargs...)
         blink!(sim.window, gfx)
         sleep_until(tm += dt)
@@ -44,7 +42,7 @@ function POMDPs.simulate(sim::BlinkSimulator,
 
     nsteps = 0
     last_sp = missing
-    for step in stepthrough(m, p, is; max_steps=sim.max_steps, rng=sim.rng)
+    for step in stepthrough(m, p, s0, "s, sp, a, r"; max_steps=sim.max_steps, rng=sim.rng)
         gfx = render(m, step; sim.render_kwargs...)
         blink!(sim.window, gfx)
         sleep_until(tm + dt)
@@ -64,17 +62,15 @@ function POMDPs.simulate(sim::BlinkSimulator,
                          m::POMDP,
                          p::Policy=RandomPolicy(m, rng=sim.rng),
                          u::Updater=updater(p),
-                         isd=initialstate_distribution(m),
-                         is=initialstate(m, sim.rng)
-                        )
-
-    b0 = initialize_belief(u, isd)
+                         b0=initialstate(m),
+                         s0=rand(sim.rng, b0)
+)
 
     dt = 1/sim.max_fps
     tm = time()
 
     if sim.extra_initial
-        step = (t=0, sp=is, bp=b0)
+        step = (t=0, sp=s0, bp=b0)
         gfx = render(m, step; sim.render_kwargs...)
         blink!(sim.window, gfx)
         sleep_until(tm += dt)
@@ -82,7 +78,7 @@ function POMDPs.simulate(sim::BlinkSimulator,
 
     nsteps = 0
     last = (s=missing, b=missing)
-    for step in stepthrough(m, p, u, b0, is; max_steps=sim.max_steps, rng=sim.rng)
+    for step in stepthrough(m, p, u, b0, s0; max_steps=sim.max_steps, rng=sim.rng)
         gfx = render(m, step; sim.render_kwargs...)
         blink!(sim.window, gfx)
         sleep_until(tm + dt)
