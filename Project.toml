@@ -1,7 +1,7 @@
 name = "BlinkPOMDPSimulator"
 uuid = "cd197ee6-b873-11e8-324e-2bd8ebd9d51c"
 authors = ["Zachary Sunberg <sunbergzach@gmail.com>"]
-version = "0.1.2"
+version = "0.2.0"
 
 [deps]
 Blink = "ad839575-38b3-5650-b840-f874b8c74a25"
