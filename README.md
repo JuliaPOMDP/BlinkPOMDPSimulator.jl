@@ -1,4 +1,6 @@
-# Blink POMDP Simulator
+# Blink POMDP Simulator (Deprecated)
+
+## This package is DEPRECATED and no longer maintained. Please reference simulators in [POMDPTools.jl](https://juliapomdp.github.io/POMDPs.jl/stable/POMDPTools/simulators/) for other otpions. The `DisplaySimulator` is a good alternative.
 
 [![CI](https://github.com/JuliaPOMDP/BlinkPOMDPSimulator.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/BlinkPOMDPSimulator.jl/actions/workflows/ci.yml)
 [![codecov.io](http://codecov.io/github/JuliaPOMDP/BlinkPOMDPSimulator.jl/coverage.svg?branch=master)](http://codecov.io/github/JuliaPOMDP/BlinkPOMDPSimulator.jl?branch=master)
